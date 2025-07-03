@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sushi App</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+</head>
+
+<body class="d-flex flex-column vh-100">
+
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Sushi App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" href="/">Home</a>
+                <a class="nav-link" href="/checkout">Checkout</a>
+                <a class="nav-link" href="/kitchen">Kitchen</a>
+                <a class="nav-link" href="/login">Login</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<% for(let i = 0; i < drink.length; i++){ %>
+    <button class="btn btn-primary m-3" type="button" data-toggle="collapse" data-target=#<%= drink[i].title %> aria-expanded="false" aria-controls=<%= drink[i].title %>>
+        <%= drink[i].title %>
+    </button>
+    <div class="collapse" id=<%= drink[i].title %>>
+        <div class="card card-body">
+            <p>Description: <%= drink[i].description %></p>
+            <p>Price: $<%= drink[i].price %></p>
+            <div class="row justify-content-center">
+                <div class="col-2" id="minus">
+                    <button class="btn-danger"> - </button>
+                </div>
+                <div class="col-4">
+                    <textarea name="qty" id="qty" placeholder="0"></textarea>
+                </div>
+                <div class="col-2" id="plus">
+                    <button class="btn-danger"> + </button>
+                </div>
+            </div>
+            <button class="btn-success">Order</button>
+        </div>
+    </div>
+<% } %>
+
+<footer class="footer bg-dark py-3 mt-auto">
+    <div class="container">
+        <span class="text-muted">&copy; Sushi App 2025</span>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+</body>
